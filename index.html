@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachit Agarwal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/04f5ca408e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </nav>
+            <div class="header-text">
+                <p>Student</p>
+                <h1>Hello, I'm <span>Rachit</span></h1>
+            </div>
+        </div>
+
+    </div>
+    <!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="me.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Passionate and driven B.Tech student in Computer Science and Engineering (Core) with a strong foundation in coding, web development, and AI. Skilled in Python, C, and front-end development, with a continuous desire to explore new technologies and enhance programming expertise. Experienced in problem-solving, teamwork, and time management through active participation in technical and managerial roles. Enthusiastic about applying technical and leadership skills to contribute to innovative projects and gain hands-on industry experience.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links">Skills</p>
+                    </div>
+                    <div class="tab-contents" id="skills">
+                        <ul>
+                            <li><span>Technical Skills</span><br>Python, C, C++, Frontend web development, React.js (beginner), HTML, CSS, SQL</li>
+                            <li><span>Non-Technical Skills</span><br>Communication, Leadership, Presentation, Adaptability, Analytical skills, Problem-solving skills, Collaboration</li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-titles">
+                        <p class="tab-links">Experience</p>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>02/2024 - 03/2024</span><br>Organiser | Yantra'24 (Intra-Annual Hackathon Week) | VIT, Vellore</li>
+                            <li><span>11/2023 - 02/2024</span><br>Organiser | IC-ETITE'24 | VIT, Vellore</li>
+                        </ul>
+                    </div>
+                    <div class="tab-titles">
+                        <p class="tab-links">Education</p>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2026</span><br>B.Tech (CSE) | VIT, Vellore | Tamil Nadu, India</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------portfolio----------------------- -->
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">
+                <center>My Work</center>
+            </h1>
+            
+            <div class="work-list">
+                <div class="work">
+                    <img src="work2.png" width="900" height="500">
+                    <div class="layer">
+                        <h3>
+                            BINGE- movie recommendation website
+                        </h3>
+                        <p>
+                            Developed a sleek, user-friendly website that recommends movies based on genres, improving user experience and interaction.<br>
+                            <a href="https://rachit0105.github.io/Movie_recommender/">view</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="work1.png" width="900" height="500">
+                    <div class="layer">
+                        <h3>
+                            BlackJack website
+                        </h3>
+                        <p>
+                            The player must get a hand with a value as close to 21 as possible without going over. A hand that goes over 21 is a bust. The players in a blackjack game play against the dealer. Each player must beat the dealer's hand to win.<br>
+                            <a href="https://rachit0105.github.io/BlackJack/">view</a>
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ---------------------------contact------------------ -->
+
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i> rachitagar0105@gmail.com</p>
+
+                    <a href="resume.pdf" class="btn btn2">View CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <textarea name="message" rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn btn2" onclick="wait()">Submit</button>
+                        <p id="WAIT"></p>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="Adios">
+            <p>Adiós!</p>
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+        var tabLinks = document.querySelectorAll(".tab-links");
+        var tabContents = document.querySelectorAll(".tab-contents");
+
+
+        tabLinks.forEach(function (tabLink, index) {
+
+            tabLink.addEventListener("click", function () {
+
+                tabLinks.forEach(function (link) {
+                    link.classList.remove("active-link");
+                });
+
+
+                tabLink.classList.add("active-link");
+
+
+                tabLinks.forEach(function (link) {
+                    link.style.textDecoration = "none";
+                });
+
+
+                tabLink.style.textDecoration = "underline";
+
+
+                tabContents.forEach(function (content) {
+                    content.style.display = "none";
+                });
+
+
+                tabContents[index].style.display = "block";
+            });
+        });
+        function wait() {
+            let text = "Please wait!";
+            document.getElementById("WAIT").innerHTML = text;
+            setTimeout(function () {
+                document.getElementById("WAIT").innerHTML = "";
+            }, 3500);
+        }
+
+
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzBZl82A7ilu_v26tbdPNy4Yoj5um7jA_kSIOJwqfUz1RYiw1LhFTH6LyiJGHcOyOKU/exec';
+
+        const form = document.forms['submit-google-sheet'];
+        const msg = document.getElementById("msg");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message Sent Successfully!";
+                    setTimeout(function () {
+                        msg.innerHTML = "";
+                    }, 4000);
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>
